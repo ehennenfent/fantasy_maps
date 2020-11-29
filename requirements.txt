@@ -1,0 +1,7 @@
+tweepy
+scipy
+progressbar2
+pillow
+matplotlib
+noise
+ghalton
