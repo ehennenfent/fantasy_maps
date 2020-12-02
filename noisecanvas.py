@@ -5,6 +5,7 @@ from templates import WorldState
 from images import icons, update_icon_size
 from PIL import ImageTk, Image
 import util
+import os
 
 canvas_width = 2048
 canvas_height = int(canvas_width * (9.0 / 16.0))
@@ -13,6 +14,9 @@ icons = update_icon_size(max(1, canvas_width // 1024))
 
 world = WorldState(canvas_width, canvas_height)
 world.generate_world()
+
+if not os.environ.get("DISPLAY", ""):
+    os.environ["DISPLAY"] = ":99"
 
 master = Tk()
 frame = Frame(master)
